@@ -69,6 +69,32 @@ p {
 }
 
 
+/* ユーザー情報テーブル */
+.label-signup {
+  margin-top: 10px;
+}
+
+.btn-signup {
+  margin-top: 15px;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+
+
 /* debug */
 .debug_dump {
   clear: both;
