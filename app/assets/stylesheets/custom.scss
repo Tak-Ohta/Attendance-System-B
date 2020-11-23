@@ -94,6 +94,24 @@ p {
 }
 
 
+/* ログインフォーム */
+.label-login {
+  margin-top: 10px;
+}
+
+.btn-login {
+  margin-top: 15px;
+}
+
+.checkbox-login {
+  width: auto;
+  margin-left: 25px;
+  span {
+    font-weight: normal;
+  }
+}
+
+
 
 /* debug */
 .debug_dump {
