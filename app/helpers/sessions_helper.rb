@@ -39,9 +39,25 @@ module SessionsHelper
     end
   end
   
+  # 渡されたユーザーがログイン済みのユーザーであればtrueを返す
+  def current_user?(user)
+    user == current_user
+  end  
+  
   # 現在ログイン中のユーザーがいればtrue、そうでなければfalseを返す
   # ログインしている状態とは、「一時的セッションにユーザーIDが存在する」こと、同時に、current_userがnilでないこと
   def logged_in?
     !current_user.nil?
+  end
+  
+  # 記憶しているURL（またはデフォルトURL）リダイレクトする
+  def redirect_back_or(default_url)
+    redirect_to(session[:forwading_url] || default_url)
+    session.delete(:forwarding_url)
+  end
+  
+  # アクセスしようとしたURlを記憶する
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end

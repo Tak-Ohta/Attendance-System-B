@@ -1,2 +1,18 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %>, <%= @user.email %></h1>
+
+<h1>アカウント情報</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>ユーザー名</th>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= @user.email %></td>
+      </tr>
+    </table>
+  </div>
+</div>
