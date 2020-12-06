@@ -1,18 +1,20 @@
 <% provide(:title, @user.name) %>
 
-<h1>アカウント情報</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <table class="table table-bordered table-hover">
-      <tr>
-        <th>ユーザー名</th>
-        <td><%= @user.name %></td>
-      </tr>
-      <tr>
-        <th>メールアドレス</th>
-        <td><%= @user.email %></td>
-      </tr>
-    </table>
-  </div>
+<div>
+  <table class="table table-bordered table-condensed user-table">
+    <tr>
+      <td>時間管理表</td>
+      <td>指定勤務時間  <%= format_basic_info(@user.work_time) %></td>
+      <td colspan="3">基本時間  <%= format_basic_info(@user.basic_time) %></td>
+      <td>初日</td>
+    </tr>
+    <tr>
+      <td>所属  <%= @user.department.present? ? @user.department : "未所属" %></td>
+      <td>氏名  <%= @user.name %></td>
+      <td>コード</td>
+      <td></td>
+      <td>出勤日数</td>
+      <td>締め</td>
+    </tr>
+  </table>
 </div>
