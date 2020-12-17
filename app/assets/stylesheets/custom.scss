@@ -104,8 +104,36 @@ p {
 #table-users {
   td {
     vertical-align: middle;
+    text-align: center;
   }
 }
+
+
+
+/* ユーザー勤怠情報テーブル */
+#user-table {
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+#table-attendances {
+  th {
+    vertical-align: middle;
+    text-align: center;
+  }
+  td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
+
+.btn-default {
+  margin: 0 20px;
+}
+
+
 
 /* ログインフォーム */
 .label-login {
