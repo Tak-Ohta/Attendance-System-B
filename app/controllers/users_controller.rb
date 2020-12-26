@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
-  before_action :set_user, only: [:show, :edit, :update, :edit_basic_info, :update_basic_info]
+  before_action :set_user, only: [:show, :edit, :update,
+                                  :edit_basic_info, :update_basic_info]
   before_action :logged_in_user, only: [:index, :show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :index
@@ -65,27 +66,5 @@ class UsersController < ApplicationController
     def basic_info_params
       params.require(:user).permit(:basic_time, :work_time)
     end
-    
-    def set_user
-      @user = User.find(params[:id])
-    end
-    
-    # ログイン済みのユーザーか確認する
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "ログインしてください。"
-        redirect_to login_url
-      end
-    end
-    
-    # アクセスしたユーザーIDが現在ログインしているユーザーか確認する
-    def correct_user
-      redirect_to root_url unless current_user?(@user)
-    end
-    
-    # 管理者権限を有しているか判定する
-    def admin_user
-      redirect_to root_url unless current_user.admin?
-    end
+
 end
