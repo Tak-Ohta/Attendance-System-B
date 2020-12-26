@@ -104,7 +104,6 @@ p {
 #table-users {
   td {
     vertical-align: middle;
-    text-align: center;
   }
 }
 
@@ -164,6 +163,15 @@ p {
   }
 }
 
+
+/* 基本情報の更新 */
+.label-basic_info {
+  margin-top: 10px;
+}
+
+.btn-basic_info {
+  margin-top: 15px;
+}
 
 
 /* debug */

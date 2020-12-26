@@ -14,7 +14,13 @@
       
       <% @users.each do |user| %>
         <tr>
-          <td><%= link_to user.name, '#' %></td> <!-- 各ユーザーの勤怠表示・編集ページへ -->
+          <td>
+            <% if current_user.admin? %>
+              <%= link_to user.name, user %>
+            <% else %>
+              <%= user.name %>
+            <% end %>
+          </td> <!-- 各ユーザーの勤怠表示・編集ページへ -->
         </tr>
       <% end %>
     </table>
