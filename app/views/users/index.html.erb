@@ -10,6 +10,7 @@
         <tr>
           <th><%= User.human_attribute_name :name %></th>
         </tr>
+        <tr></tr>
       </thead>
       
       <% @users.each do |user| %>
@@ -21,6 +22,11 @@
               <%= user.name %>
             <% end %>
           </td> <!-- 各ユーザーの勤怠表示・編集ページへ -->
+          <td>
+            <% if current_user.admin? %>
+              <%= link_to "基本情報の編集", edit_basic_info_user_path(user), class: "btn btn-info" %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </table>
