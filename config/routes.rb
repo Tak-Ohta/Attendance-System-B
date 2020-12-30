@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       patch 'attendances/update_one_month'
     end
     
+    get :search, on: :collection
+    
     resources :attendances, only: :update
   end
   
